@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Java基础总结——方法 | chocozhao | 生活需要学习，技术需要沉淀，比较使人急功近利。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="java">
+    <meta name="description" content="这是我第一次写博客，进入Android这个大坑已经有一段时间了，在学习Java过程中，把学习记录下来的笔记进行一个总结，觉得以博客的形式进行输出，从而更加巩固自己对知识的掌握程度。   方法主要区别在三个方面：修饰符、返回值、命名 方法中的参数分为：  实际参数： 实际参与运算的 形式参数：方法定义上的，接受实际参数的  方法大概分为一下九种： 一般方法 构造方法 无返回值的方法。 无参有返回值">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础总结——方法">
+<meta property="og:url" content="http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/index.html">
+<meta property="og:site_name" content="chocozhao">
+<meta property="og:description" content="这是我第一次写博客，进入Android这个大坑已经有一段时间了，在学习Java过程中，把学习记录下来的笔记进行一个总结，觉得以博客的形式进行输出，从而更加巩固自己对知识的掌握程度。   方法主要区别在三个方面：修饰符、返回值、命名 方法中的参数分为：  实际参数： 实际参与运算的 形式参数：方法定义上的，接受实际参数的  方法大概分为一下九种： 一般方法 构造方法 无返回值的方法。 无参有返回值">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.imgur.com/Ssp8g3z.png">
+<meta property="og:image" content="https://i.imgur.com/Y7QhK7R.png">
+<meta property="og:image" content="https://i.imgur.com/oCbKeOf.png">
+<meta property="og:image" content="https://i.imgur.com/VcT9dOO.png">
+<meta property="og:updated_time" content="2018-05-01T03:16:08.031Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java基础总结——方法">
+<meta name="twitter:description" content="这是我第一次写博客，进入Android这个大坑已经有一段时间了，在学习Java过程中，把学习记录下来的笔记进行一个总结，觉得以博客的形式进行输出，从而更加巩固自己对知识的掌握程度。   方法主要区别在三个方面：修饰符、返回值、命名 方法中的参数分为：  实际参数： 实际参与运算的 形式参数：方法定义上的，接受实际参数的  方法大概分为一下九种： 一般方法 构造方法 无返回值的方法。 无参有返回值">
+<meta name="twitter:image" content="https://i.imgur.com/Ssp8g3z.png">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chocozhao</h5>
+          <a href="mailto:zhao1027313530@gmail.com" title="zhao1027313530@gmail.com" class="mail">zhao1027313530@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                档案
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/chocozhao" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java基础总结——方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="global.search_input_hint">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java基础总结——方法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-23T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-03-24
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法大概分为一下九种："><span class="post-toc-number">1.</span> <span class="post-toc-text">方法大概分为一下九种：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其中还有"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">其中还有</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其中用到的修饰符"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">其中用到的修饰符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法如下"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">方法如下</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法的重载"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">方法的重载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法的重写"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">方法的重写</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Java基础回顾——方法"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java基础总结——方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-24 00:00:00" datetime="2018-03-23T16:00:00.000Z"  itemprop="datePublished">2018-03-24</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>这是我第一次写博客，进入Android这个大坑已经有一段时间了，在学习Java过程中，把学习记录下来的笔记进行一个总结，觉得以博客的形式进行输出，从而更加巩固自己对知识的掌握程度。</p>
+</blockquote>
+<hr>
+<p><strong>方法主要区别在三个方面：</strong>修饰符、返回值、命名</p>
+<p><strong>方法中的参数分为：</strong></p>
+<ul>
+<li>实际参数： 实际参与运算的</li>
+<li>形式参数：方法定义上的，接受实际参数的</li>
+</ul>
+<h1 id="方法大概分为一下九种："><a href="#方法大概分为一下九种：" class="headerlink" title="方法大概分为一下九种："></a>方法大概分为一下九种：</h1><ol>
+<li>一般方法</li>
+<li>构造方法</li>
+<li>无返回值的方法。</li>
+<li>无参有返回值的方法。</li>
+<li>有参无返回值的方法。</li>
+<li>有参有返回值的方法。</li>
+<li>静态方法。</li>
+<li>非静态方法。</li>
+<li>抽象方法。</li>
+</ol>
+<h2 id="其中还有"><a href="#其中还有" class="headerlink" title="其中还有"></a>其中还有</h2><ol>
+<li>方法的重载</li>
+<li>方法的重写</li>
+<li>方法的调用</li>
+</ol>
+<h2 id="其中用到的修饰符"><a href="#其中用到的修饰符" class="headerlink" title="其中用到的修饰符"></a>其中用到的修饰符</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.imgur.com/Ssp8g3z.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="方法如下"><a href="#方法如下" class="headerlink" title="方法如下"></a>方法如下</h3><pre><code>int a = 1；
+//一般方法
+public Sample() { 
+    System.out.println(a); 
+} 
+
+public void Sample() { // 无返回值的方法，void就是空的意思
+    System.out.println(a); 
+}  
+
+public int Sample() { //无参有返回值的方法
+    System.out.println(a); 
+    return a; 
+}  
+public void Sample(int a) { // 有参无返回值的方法
+    System.out.println(a); 
+} 
+
+public int Sample(int a) { // 有参有返回值的方法
+    System.out.println(a); 
+    return a;
+}
+public static void Sample() { // 静态方法。
+    System.out.println(a); 
+}  
+public void Sample() { // 非静态方法。
+    System.out.println(a); 
+}  
+public void Sample() { // 非静态方法。
+    System.out.println(a); 
+}  
+
+public abstract void Sample() { // 抽象方法，abstract不能与private、static、final、native并列修饰同一个方法。
+    System.out.println(a); 
+}  
+</code></pre><h2 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h2><p>重载(overloading) 是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。</p>
+<p>每个重载的方法（或者构造函数）都必须有一个独一无二的参数类型列表。</p>
+<p>最常用的地方就是构造器的重载。</p>
+<pre><code>public class Overloading {
+    public int test(){
+    System.out.println(&quot;test1&quot;);
+    return 1;
+}
+
+    public void test(int a){
+    System.out.println(&quot;test2&quot;);
+}   
+
+//以下两个参数类型顺序不同
+    public String test(int a,String s){
+        System.out.println(&quot;test3&quot;);
+        return &quot;returntest3&quot;;
+}   
+
+    public String test(String s,int a){
+        System.out.println(&quot;test4&quot;);
+        return &quot;returntest4&quot;;
+}   
+
+    public static void main(String[] args){
+        Overloading o = new Overloading();
+        System.out.println(o.test());
+        o.test(1);
+        System.out.println(o.test(1,&quot;test3&quot;));
+        System.out.println(o.test(&quot;test4&quot;,1));
+    }
+}
+</code></pre><h2 id="方法的重写"><a href="#方法的重写" class="headerlink" title="方法的重写"></a>方法的重写</h2><p>参数列表必须完全与被重写方法的相同；<br>返回类型必须完全与被重写方法的返回类型相同；<br>访问权限不能比父类中被重写的方法的访问权限更低。例如：如果父类的一个方法被声明为public，那么在子类中重写该方法就不能声明为protected。<br>父类的成员方法只能被它的子类重写。<br>声明为final的方法不能被重写。<br>声明为static的方法不能被重写，但是能够被再次声明。<br>子类和父类在同一个包中，那么子类可以重写父类所有方法，除了声明为private和final的方法。<br>子类和父类不在同一个包中，那么子类只能够重写父类的声明为public和protected的非final方法。<br>重写的方法能够抛出任何非强制异常，无论被重写的方法是否抛出异常。但是，重写的方法不能抛出新的强制性异常，或者比被重写方法声明的更广泛的强制性异常，反之则可以。<br>构造方法不能被重写。<br>如果不能继承一个方法，则不能重写这个方法。</p>
+<p><strong>当需要在子类中调用父类的被重写方法时，要使用super关键字。代码如下：</strong></p>
+<pre><code>class Animal{
+   public void move(){
+  System.out.println(&quot;动物可以移动&quot;);
+   }
+}
+
+class Dog extends Animal{
+   public void move(){
+  super.move(); // 应用super类的方法
+  System.out.println(&quot;狗可以跑和走&quot;);
+   }
+}
+
+public class TestDog{
+   public static void main(String args[]){
+
+  Animal b = new Dog(); // Dog 对象
+  b.move(); //执行 Dog类的方法
+
+   }
+}
+</code></pre><p><strong>运行结果：</strong></p>
+<blockquote>
+<p>动物可以移动</p>
+<p>狗可以跑和走</p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.imgur.com/Y7QhK7R.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p><strong>下面图片区分重写(Overriding)和重载(Overloading)的区别</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.imgur.com/oCbKeOf.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.imgur.com/VcT9dOO.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p><strong>方法的调用</strong></p>
+<pre><code>public class InvokeMethod{ 
+    public static void main (String[] args){ 
+        InvokeMethod.t2(); 
+} 
+    public static void t2(){ 
+        System.out.println(&quot;static t2....&quot;);
+     } 
+}
+</code></pre><blockquote>
+<p><strong>感谢浏览到最后，努力的小人儿运气不会差。</strong></p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    post.last_updated<time datetime="2018-05-01T03:16:08.031Z" itemprop="dateUpdated">2018-05-01 11:16:08</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/03/24/Java基础回顾——方法/" target="_blank" rel="external">http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://chocozhao.github.io">
+            <img src="/img/avatar.jpg" alt="chocozhao">
+            chocozhao
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/&title=《Java基础总结——方法》 — chocozhao&pic=http://chocozhao.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/&title=《Java基础总结——方法》 — chocozhao&source=这是一个分享的地方，也是个人成长的地方。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java基础总结——方法》 — chocozhao&url=http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/&via=http://chocozhao.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/05/01/Java基础总结——修饰符/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Java基础回顾——修饰符</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢亲~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>footer.license</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chocozhao &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/&title=《Java基础总结——方法》 — chocozhao&pic=http://chocozhao.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/&title=《Java基础总结——方法》 — chocozhao&source=这是一个分享的地方，也是个人成长的地方。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java基础总结——方法》 — chocozhao&url=http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/&via=http://chocozhao.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://chocozhao.github.io/2018/03/24/Java基础回顾——方法/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '爱我，别走！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!你还是爱我的!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
