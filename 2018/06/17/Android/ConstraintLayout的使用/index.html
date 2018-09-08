@@ -44,7 +44,7 @@
 <meta property="og:image" content="https://i.imgur.com/wGXhwf8.gif">
 <meta property="og:image" content="https://i.imgur.com/i6lyCxu.gif">
 <meta property="og:image" content="https://i.imgur.com/d0FeWdl.png">
-<meta property="og:updated_time" content="2018-06-17T12:25:18.323Z">
+<meta property="og:updated_time" content="2018-06-17T12:52:21.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ConstraintLayout的使用">
 <meta name="twitter:description" content="一、什么是ConstraintLayoutConstraintLayout是Android中的一种布局，中文称约束布局，在2016年Google I/O大会时提出，2017年2月发布正式版，目前稳定版本为1.0.2。约束布局作为Google今后主推的布局样式，可以完全替代其他布局，降低页面布局层级，提升页面渲染性能。 二、为什么用ConstraintLayoutGoogle大佬提供了的布局有Lin">
@@ -174,7 +174,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、什么是ConstraintLayout"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、什么是ConstraintLayout</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、为什么用ConstraintLayout"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、为什么用ConstraintLayout</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、怎么用ConstraintLayout"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、怎么用ConstraintLayout</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在你项目中添加ConstraintLayout"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">在你项目中添加ConstraintLayout</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#边距"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">边距</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#居中位置"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">居中位置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#循环位置"><span class="post-toc-number">3.1.3.</span> <span class="post-toc-text">循环位置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#可见性"><span class="post-toc-number">3.1.4.</span> <span class="post-toc-text">可见性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#尺寸限制"><span class="post-toc-number">3.1.5.</span> <span class="post-toc-text">尺寸限制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#链"><span class="post-toc-number">3.1.6.</span> <span class="post-toc-text">链</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#虚拟助手对象"><span class="post-toc-number">3.1.7.</span> <span class="post-toc-text">虚拟助手对象</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">总结</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、什么是ConstraintLayout"><span class="post-toc-number">1.</span> <span class="post-toc-text">一、什么是ConstraintLayout</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、为什么用ConstraintLayout"><span class="post-toc-number">2.</span> <span class="post-toc-text">二、为什么用ConstraintLayout</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、怎么用ConstraintLayout"><span class="post-toc-number">3.</span> <span class="post-toc-text">三、怎么用ConstraintLayout</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在你项目中添加ConstraintLayout"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">在你项目中添加ConstraintLayout</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#建立约束"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">建立约束</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#边距"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">边距</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#居中位置"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">居中位置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#循环位置"><span class="post-toc-number">3.2.3.</span> <span class="post-toc-text">循环位置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#可见性"><span class="post-toc-number">3.2.4.</span> <span class="post-toc-text">可见性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#尺寸限制"><span class="post-toc-number">3.2.5.</span> <span class="post-toc-text">尺寸限制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#链"><span class="post-toc-number">3.2.6.</span> <span class="post-toc-text">链</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#虚拟助手对象"><span class="post-toc-number">3.2.7.</span> <span class="post-toc-text">虚拟助手对象</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">总结</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -258,8 +258,7 @@
     compile &apos;com.android.support.constraint:constraint-layout:1.0.2&apos;
 }
 </code></pre><p>3、在工具栏或同步通知中，点击将项目与Gradle文件同步</p>
-<p><strong>建立约束</strong></p>
-<p>一般约束<br><figure class="image-bubble">
+<h3 id="建立约束"><a href="#建立约束" class="headerlink" title="建立约束"></a>建立约束</h3><p>一般约束<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://i.imgur.com/otLqtiZ.gif" alt="" title="">
@@ -308,7 +307,7 @@
                     <img src="https://i.imgur.com/JJOOyOc.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
-            </figure> 表示Match Constraints：尽可能扩展以满足各方的约束。<br><br>#### 属性介绍 ####<br><br>&gt; ConstraintLayout是一个ViewGroup，它允许您以灵活的方式定位和调整窗口小部件的大小<br><br>#### 相对位置 ####<br><br>水平方向：左边(left)、右边(right)、双方开始(start)和结束(end)<br><br>垂直方向：顶部(top)、底部(bottom)和文字基线(baseline)<br><br><figure class="image-bubble">
+            </figure> 表示Match Constraints：尽可能扩展以满足各方的约束。<br><br><br>### 属性介绍 ###<br><br>&gt; ConstraintLayout是一个ViewGroup，它允许您以灵活的方式定位和调整窗口小部件的大小<br><br>#### 相对位置 ####<br><br>水平方向：左边(left)、右边(right)、双方开始(start)和结束(end)<br><br>垂直方向：顶部(top)、底部(bottom)和文字基线(baseline)<br><br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://i.imgur.com/ZjqgEfG.png" alt="" title="">
@@ -448,7 +447,7 @@ app:layout_constraintRight_toRightOf=&quot;parent&quot;
             </figure>
 <p>因此，我觉得最常用的布局的优先级可以排序为：</p>
 <p><code>ConstraintLayout</code> &gt; <code>RelativeLayout</code> &gt; <code>LinearLayout</code>.</p>
-<p>随着ConstraintLayout的逐渐强大，越来越发发现ConstraintLayout集合任何布局与一身再将自身优化，随着它的强大，必将取代其他布局的位置，不管怎样，面对任何需求，考虑各个方面的因素，适合自己的才是最好的。</p>
+<p>随着ConstraintLayout的逐渐强大，越来越发现ConstraintLayout集合与任何布局与一身再将自身优化，随着它的强大，必将取代其他布局的位置，不管怎样，面对任何需求，考虑各个方面的因素，适合自己的才是最好的。</p>
 
         </div>
 
@@ -457,7 +456,7 @@ app:layout_constraintRight_toRightOf=&quot;parent&quot;
     <div class="content">
         
 <span class="post-time">
-    post.last_updated<time datetime="2018-06-17T12:25:18.323Z" itemprop="dateUpdated">2018-06-17 20:25:18</time>
+    post.last_updated<time datetime="2018-06-17T12:52:21.092Z" itemprop="dateUpdated">2018-06-17 20:52:21</time>
 </span><br>
 
 
@@ -543,9 +542,9 @@ app:layout_constraintRight_toRightOf=&quot;parent&quot;
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/05/15/个人/个人总结/" id="post-next" class="post-nav-link">
+      <a href="/2018/05/15/自我随笔/自我随便—个人项目总结/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">个人总结</h4>
+        <h4 class="title">自我随笔 | 自我项目总结</h4>
       </a>
     </div>
   
