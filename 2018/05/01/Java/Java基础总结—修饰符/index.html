@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Java基础回顾 | 修饰符 | chocozhao | 生活需要学习，技术需要沉淀，比较使人急功近利。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java">
+    <meta name="description" content="Java修饰符 阅读本文只需要五分钟   Java语言提供了很多的修饰符，分为以下两类：  访问修饰符 非访问修饰符  一、访问修饰符Java中，可以使用访问控制符来保护对类、变量、方法和构造方法的访问。Java 支持 4 种不同的访问权限。  default (即缺省，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。  private : 在同一类内可见。使用对">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础回顾 | 修饰符">
+<meta property="og:url" content="http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/index.html">
+<meta property="og:site_name" content="chocozhao">
+<meta property="og:description" content="Java修饰符 阅读本文只需要五分钟   Java语言提供了很多的修饰符，分为以下两类：  访问修饰符 非访问修饰符  一、访问修饰符Java中，可以使用访问控制符来保护对类、变量、方法和构造方法的访问。Java 支持 4 种不同的访问权限。  default (即缺省，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。  private : 在同一类内可见。使用对">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.imgur.com/PWn7rbo.png">
+<meta property="og:updated_time" content="2018-09-08T08:49:11.643Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java基础回顾 | 修饰符">
+<meta name="twitter:description" content="Java修饰符 阅读本文只需要五分钟   Java语言提供了很多的修饰符，分为以下两类：  访问修饰符 非访问修饰符  一、访问修饰符Java中，可以使用访问控制符来保护对类、变量、方法和构造方法的访问。Java 支持 4 种不同的访问权限。  default (即缺省，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。  private : 在同一类内可见。使用对">
+<meta name="twitter:image" content="https://i.imgur.com/PWn7rbo.png">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">chocozhao</h5>
+          <a href="mailto:zhao1027313530@gmail.com" title="zhao1027313530@gmail.com" class="mail">zhao1027313530@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                档案
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/chocozhao" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java基础回顾 | 修饰符</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="global.search_input_hint">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java基础回顾 | 修饰符</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-05-01T03:08:47.000Z" itemprop="datePublished" class="page-time">
+  2018-05-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java修饰符"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java修饰符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、访问修饰符"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一、访问修饰符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#default修饰符："><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">default修饰符：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#private修饰符"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">private修饰符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#public修饰符"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">public修饰符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#protected修饰符"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">protected修饰符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#访问控制和继承"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">访问控制和继承</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、非访问修饰符"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">二、非访问修饰符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#stati修饰符"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">stati修饰符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#final-修饰符"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">final 修饰符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#final方法"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">final方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#final-类"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">final 类</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#abstract-修饰符"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">abstract 修饰符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#synchronized-修饰符"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">synchronized 修饰符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#transient-修饰符"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">transient 修饰符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#volatile-修饰符"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">volatile 修饰符</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Java/Java基础总结—修饰符"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java基础回顾 | 修饰符</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-05-01 11:08:47" datetime="2018-05-01T03:08:47.000Z"  itemprop="datePublished">2018-05-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Java修饰符"><a href="#Java修饰符" class="headerlink" title="Java修饰符"></a>Java修饰符</h1><blockquote>
+<p>阅读本文只需要五分钟</p>
+</blockquote>
+<hr>
+<p>Java语言提供了很多的修饰符，分为以下两类：</p>
+<ul>
+<li><strong>访问修饰符</strong></li>
+<li><strong>非访问修饰符</strong></li>
+</ul>
+<h2 id="一、访问修饰符"><a href="#一、访问修饰符" class="headerlink" title="一、访问修饰符"></a>一、访问修饰符</h2><p>Java中，可以使用访问控制符来保护对类、变量、方法和构造方法的访问。Java 支持 4 种不同的访问权限。</p>
+<ol>
+<li><strong>default</strong> (即缺省，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。</li>
+<li><strong> private</strong> : 在同一类内可见。使用对象：变量、方法。 <strong>注意：不能修饰类（外部类</strong>）</li>
+<li><strong>public</strong> : 对所有类可见。使用对象：类、接口、变量、方法</li>
+<li><strong>protected</strong> : 对同一包内的类和所有子类可见。使用对象：变量、方法。 <strong>注意：不能修饰类（外部类）。</strong></li>
+</ol>
+<p>下面这个表可以一目了然说明访问权限：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.imgur.com/PWn7rbo.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>接下来一个个分析上面的修饰符</p>
+<h3 id="default修饰符："><a href="#default修饰符：" class="headerlink" title="default修饰符："></a>default修饰符：</h3><p>default修饰符(默认访问修饰符)是不需要使用任何关键字的，都说是默认，是不需要自己添加的，对同一个包内的类可见。下面举个例子：</p>
+<pre><code>String version = &quot;1.5.1&quot;;
+boolean processOrder() {
+   return true;
+}
+</code></pre><h3 id="private修饰符"><a href="#private修饰符" class="headerlink" title="private修饰符"></a>private修饰符</h3><p>private修饰符(私有访问修饰符)一旦所属的类的方法，变量和构造方法被私有化(加上private关键字)一旦私有化，只能通过类中公共的get方法提供给外部类访问，这是最为严格的修饰符，一般用来隐藏类的实现细节和保护类的数据。还是觉得例子才能得到你的芳心：</p>
+<pre><code>public class Logger {
+   private String format;
+
+   public String getFormat() {
+          return this.format;
+   }
+   public void setFormat(String format) {
+          this.format = format;
+   }
+}
+</code></pre><p>实例中，Logger 类中的 format 变量为私有变量，所以其他类不能直接得到和设置该变量的值。为了使其他类能够操作该变量，定义了两个 public 方法：getFormat() （返回 format的值）和 setFormat(String)（设置 format 的值）</p>
+<h3 id="public修饰符"><a href="#public修饰符" class="headerlink" title="public修饰符"></a>public修饰符</h3><p>public修饰符(公有访问修饰符)可是比private修饰符大方很多，只要用它修饰类、方法、构造方法和接口能够被任何其他类访问。所以在很多地方都会有它的身影，main方法也是利用它来修饰的呢，看一下实例吧：</p>
+<pre><code>public static void main(String[] arguments) {
+   // ...
+}
+</code></pre><p>Java 程序的 main() 方法必须设置成公有的，否则，Java 解释器将不能运行该类。</p>
+<h3 id="protected修饰符"><a href="#protected修饰符" class="headerlink" title="protected修饰符"></a>protected修饰符</h3><p>protected修饰符(受保护的访问修饰符)，其实这个受保护的大哥可以分为两种情况来吹捧一波：</p>
+<ul>
+<li><p><strong>子类与基类在同一包中</strong>：被声明为 protected 的变量、方法和构造器能被同一个包中的任何其他类访问。</p>
+</li>
+<li><p><strong>子类与基类不在同一包中</strong>：那么在子类中，子类实例可以访问其从基类继承而来的 protected 方法，而不能访问基类实例的protected方法。</p>
+</li>
+</ul>
+<p>protected 访问修饰符不能修饰类和接口，方法和成员变量能够声明为 protected，但是接口的成员变量和成员方法不能声明为 protected。</p>
+<p>子类能访问 protected 修饰符声明的方法和变量，这样就能保护不相关的类使用这些方法和变量。</p>
+<p>下面的父类使用了 protected 访问修饰符，子类重写了父类的 openSpeaker() 方法。</p>
+<pre><code>class AudioPlayer {
+   protected boolean openSpeaker(Speaker sp) {
+  // 实现细节
+   }
+}
+
+class StreamingAudioPlayer extends AudioPlayer {
+   protected boolean openSpeaker(Speaker sp) {
+  // 实现细节
+   }
+}
+</code></pre><p>如果把 openSpeaker() 方法声明为 private，那么除了 AudioPlayer 之外的类将不能访问该方法。</p>
+<p>如果把 openSpeaker() 声明为 public，那么所有的类都能够访问该方法。</p>
+<p>如果我们只想让该方法对其所在类的子类可见，则将该方法声明为 protected。</p>
+<blockquote>
+<p>protected 是最难理解的一种 Java 类成员访问权限修饰词，更多详细内容请查看 <a href="http://www.runoob.com/w3cnote/java-protected-keyword-detailed-explanation.html" target="_blank" rel="noopener">Java protected 关键字详解</a>。</p>
+</blockquote>
+<h3 id="访问控制和继承"><a href="#访问控制和继承" class="headerlink" title="访问控制和继承"></a>访问控制和继承</h3><p>请注意以下方法继承的规则：</p>
+<ul>
+<li>父类中声明为 public 的方法在子类中也必须为 public。</li>
+<li>父类中声明为 protected 的方法在子类中要么声明为     protected，要么声明为 public，不能声明为 private。</li>
+<li>父类中声明为 private 的方法，不能够被继承。</li>
+</ul>
+<h2 id="二、非访问修饰符"><a href="#二、非访问修饰符" class="headerlink" title="二、非访问修饰符"></a>二、非访问修饰符</h2><p>为了实现更多功能，java也提供了非常多的非访问修饰符</p>
+<ul>
+<li>static 修饰符，用来修饰类方法和类变量。</li>
+<li>final 修饰符，用来修饰类、方法和变量，final 修饰的类不能够被继承，修饰的方法不能被继承类重新定义，修饰的变量为常量，是不可修改的。 </li>
+<li>abstract 修饰符，用来创建抽象类和抽象方法。</li>
+<li>synchronized 和 volatile 修饰符，主要用于线程的编程</li>
+</ul>
+<h3 id="stati修饰符"><a href="#stati修饰符" class="headerlink" title="stati修饰符"></a>stati修饰符</h3><p><strong>静态变量：</strong><br>static 关键字用来声明独立于对象的静态变量，无论一个类实例化多少对象，它的静态变量只有一份拷贝。 静态变量也被称为类变量。局部变量不能被声明为 static 变量。</p>
+<p><strong>静态方法：</strong>static 关键字用来声明独立于对象的静态方法。静态方法不能使用类的非静态变量。静态方法从参数列表得到数据，然后计算这些数据。</p>
+<p>static修饰符用来创建类方法和类变量</p>
+<pre><code> public class InstanceCounter {
+   private static int numInstances = 0;
+
+   protected static int getCount() {
+          return numInstances;
+   }
+
+   private static void addInstance() {
+          numInstances++;
+   }
+
+   InstanceCounter() {
+          InstanceCounter.addInstance();
+   }
+
+   public static void main(String[] arguments) {
+      System.out.println(&quot;Starting with &quot; +
+      InstanceCounter.getCount() + &quot; instances&quot;);
+      for (int i = 0; i &lt; 500; ++i){
+         new InstanceCounter();
+          }
+      System.out.println(&quot;Created &quot; +
+      InstanceCounter.getCount() + &quot; instances&quot;);
+   }
+}
+</code></pre><p>结果如下：</p>
+<pre><code>Starting with 0 instances
+Created 500 instances
+</code></pre><h3 id="final-修饰符"><a href="#final-修饰符" class="headerlink" title="final 修饰符"></a>final 修饰符</h3><p>final 变量能被显式地初始化并且只能初始化一次。被声明为 final 的对象的引用不能指向不同的对象。但是 final 对象里的数据可以被改变。也就是说 final 对象的引用不能改变，但是里面的值可以改变。</p>
+<p>final 修饰符通常和 static 修饰符一起使用来创建类常量。实例：</p>
+<pre><code>public class Test{
+  final int value = 10;
+  // 下面是声明常量的实例
+  public static final int BOXWIDTH = 6;
+  static final String TITLE = &quot;Manager&quot;;
+
+  public void changeValue(){
+         value = 12; //将输出一个错误
+  }
+}
+</code></pre><h4 id="final方法"><a href="#final方法" class="headerlink" title="final方法"></a>final方法</h4><ul>
+<li><p>类中的 final 方法可以被子类继承，但是不能被子类修改。</p>
+</li>
+<li><p>声明 final 方法的主要目的是防止该方法的内容被修改。<br>如下所示，使用 final 修饰符声明方法。</p>
+<pre><code>public class Test{
+        public final void changeName(){
+           // 方法体
+        }
+    }
+</code></pre></li>
+</ul>
+<h4 id="final-类"><a href="#final-类" class="headerlink" title="final 类"></a>final 类</h4><p>final 类不能被继承，没有类能够继承 final 类的任何特性。</p>
+<pre><code>public final class Test {
+   // 类体
+}
+</code></pre><h3 id="abstract-修饰符"><a href="#abstract-修饰符" class="headerlink" title="abstract 修饰符"></a>abstract 修饰符</h3><p><strong>抽象类：</strong></p>
+<ul>
+<li>抽象类不能用来实例化对象，声明抽象类的唯一目的是为了将来对该类进行扩充。 </li>
+<li>一个类不能同时被 abstract 和 final 修饰。如果一个类包含抽象方法，那么该类一定要声明为抽象类，否则将出现编译错误。</li>
+<li>抽象类可以包含抽象方法和非抽象方法。</li>
+</ul>
+<p><strong>抽象方法</strong></p>
+<ul>
+<li>抽象方法是一种没有任何实现的方法，该方法的的具体实现由子类提供。</li>
+<li>抽象方法不能被声明成 final 和 static。</li>
+<li>任何继承抽象类的子类必须实现父类的所有抽象方法，除非该子类也是抽象类。</li>
+<li>如果一个类包含若干个抽象方法，那么该类必须声明为抽象类。抽象类可以不包含抽象方法。</li>
+<li><p>抽象方法的声明以分号结尾，例如：public abstract sample();</p>
+<pre><code>    public abstract class SuperClass{
+    abstract void m(); //抽象方法
+}
+
+class SubClass extends SuperClass{
+     //实现抽象方法
+      void m(){
+      .........
+      }
+    }
+</code></pre></li>
+</ul>
+<h3 id="synchronized-修饰符"><a href="#synchronized-修饰符" class="headerlink" title="synchronized 修饰符"></a>synchronized 修饰符</h3><p>synchronized 关键字声明的方法同一时间只能被一个线程访问。实例：</p>
+<pre><code>public synchronized void showDetails(){
+.......
+}
+</code></pre><h3 id="transient-修饰符"><a href="#transient-修饰符" class="headerlink" title="transient 修饰符"></a>transient 修饰符</h3><ul>
+<li>序列化的对象包含被 transient 修饰的实例变量时，java 虚拟机(JVM)跳过该特定的变量。</li>
+<li>该修饰符包含在定义变量的语句中，用来预处理类和变量的数据类型。</li>
+</ul>
+<h3 id="volatile-修饰符"><a href="#volatile-修饰符" class="headerlink" title="volatile 修饰符"></a>volatile 修饰符</h3><p>volatile 修饰的成员变量在每次被线程访问时，都强制从共享内存中重新读取该成员变量的值。而且，当成员变量发生变化时，会强制线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。</p>
+<p>一个 volatile 对象引用可能是 null。</p>
+<pre><code>public class MyRunnable implements Runnable{
+
+private volatile boolean active;
+
+public void run(){
+    active = true;
+        while (active) // 第一行
+        {
+        // 代码
+        }
+ }
+    public void stop(){
+    active = false; // 第二行
+    }
+}
+</code></pre><p>通常情况下，在一个线程调用 run() 方法（在 Runnable 开启的线程），在另一个线程调用 stop() 方法。 如果 第一行 中缓冲区的 active 值被使用，那么在 第二行 的 active 值为 false 时循环不会停止。<br>但是以上代码中我们使用了 volatile 修饰 active，所以该循环会停止。</p>
+<p><strong>非常感谢你阅读到这里。点波关注是最大的鼓励</strong></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    post.last_updated<time datetime="2018-09-08T08:49:11.643Z" itemprop="dateUpdated">2018-09-08 16:49:11</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/05/01/Java/Java基础总结—修饰符/" target="_blank" rel="external">http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://chocozhao.github.io">
+            <img src="/img/avatar.jpg" alt="chocozhao">
+            chocozhao
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/&title=《Java基础回顾 | 修饰符》 — chocozhao&pic=http://chocozhao.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/&title=《Java基础回顾 | 修饰符》 — chocozhao&source=这是一个分享的地方，也是个人成长的地方。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java基础回顾 | 修饰符》 — chocozhao&url=http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/&via=http://chocozhao.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/05/15/自我随笔/自我随便—自我项目总结/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">自我随笔|自我项目总结</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/03/24/Java/Java基础回顾—方法/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Java基础回顾 | 方法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢亲~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>footer.license</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>chocozhao &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/&title=《Java基础回顾 | 修饰符》 — chocozhao&pic=http://chocozhao.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/&title=《Java基础回顾 | 修饰符》 — chocozhao&source=这是一个分享的地方，也是个人成长的地方。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java基础回顾 | 修饰符》 — chocozhao&url=http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/&via=http://chocozhao.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://chocozhao.github.io/2018/05/01/Java/Java基础总结—修饰符/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '爱我，别走！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!你还是爱我的!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
